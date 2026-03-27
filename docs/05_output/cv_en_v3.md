@@ -5,7 +5,7 @@ sebastiano.laurent@outlook.com
 linkedin.com/in/sebastianolaurent
 
 ## Professional Title
-Senior Mobile Developer (Flutter) | Mobile Team Leader | Backend Integration (C#/SQL/REST)
+Senior Mobile Developer (iOS/Android/Flutter) | Mobile Team Leader | Backend Integration (C#/SQL/REST)
 
 ## Executive Summary
 Senior Mobile Developer with 9+ years of experience (since 2017) in cross-platform development and end-to-end delivery of enterprise digital products. Progressed from Software Developer to Team Leader at Engitel S.p.A., with hands-on coordination of a 5-developer team, technical mentoring, and alignment with technical/business stakeholders. Strong focus on Flutter, release quality, and backend/API integration. Direct contribution to a high-adoption product: the ATM Milan app (2M+ active users).
@@ -28,10 +28,10 @@ Key responsibilities:
 - Provided technical mentoring, code review support, and pre-release quality gates.
 - Partnered with PMs/stakeholders on roadmap planning and technical risk management.
 
-Results and impact (fill with final metrics):
-- Improved release reliability by reducing post-release defects by [X%] in [N months].
-- Increased release cadence from [X] to [Y] releases/month by improving delivery flow.
-- Reduced average delivery lead time by [X%] through technical planning and quality gates.
+Results and impact:
+- Improved release reliability with lower post-release defects [TO BE CONFIRMED: % value and period].
+- Increased release cadence [TO BE CONFIRMED: baseline and current releases/month].
+- Reduced average delivery lead time [TO BE CONFIRMED: % or days delta].
 - Stabilized team delivery with clear ownership on technical backlog and priorities.
 
 Technologies:
@@ -45,9 +45,9 @@ Key responsibilities:
 - Supported code review, testing, and production releases.
 - Collaborated with clients/stakeholders on functional analysis and project progress.
 
-Results and impact (fill with final metrics):
-- Improved app stability by reducing recurring defects by [X%].
-- Reduced critical issue resolution time from [X days] to [Y days].
+Results and impact:
+- Improved app stability by reducing recurring defects [TO BE CONFIRMED: % value].
+- Reduced critical issue resolution time [TO BE CONFIRMED: baseline and current days].
 - Contributed to standardizing code review and testing practices.
 
 Technologies:
@@ -66,8 +66,8 @@ Key responsibilities:
 
 Results and impact:
 - 2M+ active users.
-- App performance improvements: [startup time -X%], [ANR/crash -Y%] (where available).
-- UX/accessibility quality improvements with [user ticket reduction X%] (where available).
+- App performance improvements [TO BE CONFIRMED: startup time and ANR/crash delta].
+- UX/accessibility quality improvements [TO BE CONFIRMED: user ticket reduction or equivalent KPI].
 - Became a key digital product for urban mobility in Milan.
 
 Technologies:

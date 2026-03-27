@@ -12,20 +12,20 @@ Senior Mobile Developer con 9+ anni di esperienza in sviluppo mobile native e cr
 - Coordinamento operativo di 5 sviluppatori, pianificazione task e gestione scadenze.
 - Mentoring tecnico e presidio quality gate (code review, testing, supporto rilascio).
 - Contributo su funzionalità core: geolocalizzazione, notifiche real-time, integrazione pagamenti/in-app purchase.
-- Risultati (da completare con metriche): defect post-rilascio -[X%], lead time delivery -[X%], release frequency [X -> Y]/mese.
+- Risultati: defect post-rilascio [DA CONFERMARE: variazione %], lead time delivery [DA CONFERMARE: variazione % o giorni], release frequency [DA CONFERMARE: baseline -> attuale]/mese.
 
 ### Engitel S.p.A. | Software Developer | 2017-2021
 - Sviluppo app cross-platform con Xamarin.
 - Code review, testing e supporto ai rilasci.
 - Collaborazione con clienti/stakeholder su analisi funzionali e avanzamento progetti.
-- Risultati (da completare con metriche): bug ricorrenti -[X%], tempo risoluzione issue critiche [X -> Y giorni].
+- Risultati: bug ricorrenti [DA CONFERMARE: variazione %], tempo risoluzione issue critiche [DA CONFERMARE: baseline -> attuale giorni].
 
 ## Progetto di Rilievo
 ### App ufficiale ATM Milano | Full Stack Developer (Mobile-Centric) | 2018-2024
 - Rifacimento grafico e funzionale della nuova app ufficiale ATM Milano con Flutter.
 - Integrazione sistemi per titoli di viaggio, pagamenti, mappe, pianificazione percorsi.
 - Focus su accessibilità, usabilità, stabilità applicativa e performance.
-- Impatto: oltre 2 milioni di utenti attivi; KPI tecnici da esplicitare dove disponibili (crash, startup, ticket utenti).
+- Impatto: oltre 2 milioni di utenti attivi; KPI tecnici [DA CONFERMARE: crash, startup, ticket utenti].
 
 ## Competenze
 ### Mobile

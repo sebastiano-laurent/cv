@@ -18,7 +18,7 @@ Periodo: 2017-2021
 
 ## Azienda: Engitel S.p.A.
 Ruolo: Team Leader
-Periodo: 2021-2025
+Periodo: 2021-Oggi
 
 ### Responsabilita principali
 - Sviluppo di applicazioni mobile cross-platform con Flutter
@@ -29,6 +29,7 @@ Periodo: 2021-2025
 - Gestione operativa e tecnica di team mobile con ownership su pianificazione e delivery
 - Evoluzione stack mobile verso Flutter su progetti cross-platform
 - Migliore allineamento tra roadmap tecnica e obiettivi progettuali tramite interazione continua con stakeholder
+- KPI delivery [DA CONFERMARE: defect post-rilascio, lead time, frequenza rilasci]
 
 ---
 
@@ -46,3 +47,4 @@ Periodo: 2018-2024
 - Applicazione adottata da oltre 2 milioni di utenti attivi
 - Contributo a un prodotto digitale diventato canale centrale per la mobilita urbana a Milano
 - Riscontri positivi da azienda e utenti finali su funzionalita, stabilita e qualita UX
+- KPI tecnici [DA CONFERMARE: crash rate, startup time, ticket UX/accessibilita]

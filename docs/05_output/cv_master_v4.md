@@ -30,10 +30,10 @@ Responsabilità chiave:
 - Mentoring tecnico, code review e quality gate pre-rilascio.
 - Collaborazione con PM/stakeholder per pianificazione roadmap e gestione rischi tecnici.
 
-Risultati e impatto (completare con metriche effettive):
-- Migliorata la release reliability riducendo i defect post-rilascio del [X%] in [N mesi].
-- Incrementata la cadenza di rilascio da [X] a [Y] release/mese tramite miglioramento del flusso delivery.
-- Ridotto il lead time medio di delivery del [X%] grazie a pianificazione tecnica e quality gate.
+Risultati e impatto:
+- Migliorata la release reliability con riduzione dei defect post-rilascio [DA CONFERMARE: valore % e periodo].
+- Incrementata la cadenza di rilascio [DA CONFERMARE: baseline e valore attuale release/mese].
+- Ridotto il lead time medio di delivery [DA CONFERMARE: variazione % o giorni].
 - Stabilizzato il processo di team delivery con ownership chiara su backlog tecnico e priorità.
 
 Tecnologie:
@@ -47,9 +47,9 @@ Responsabilità chiave:
 - Supporto a code review, testing e rilascio in produzione.
 - Collaborazione con clienti/stakeholder su analisi funzionali e avanzamento progettuale.
 
-Risultati e impatto (completare con metriche effettive):
-- Migliorata la stabilità applicativa con riduzione dei bug ricorrenti del [X%].
-- Ridotti i tempi di risoluzione issue critiche da [X giorni] a [Y giorni].
+Risultati e impatto:
+- Migliorata la stabilità applicativa con riduzione dei bug ricorrenti [DA CONFERMARE: valore %].
+- Ridotti i tempi di risoluzione issue critiche [DA CONFERMARE: baseline e valore attuale in giorni].
 - Contributo alla standardizzazione delle pratiche di code review e testing nel team.
 
 Tecnologie:
@@ -68,8 +68,8 @@ Responsabilità chiave:
 
 Risultati e impatto:
 - Oltre 2 milioni di utenti attivi.
-- Miglioramento performance lato app: [startup time -X%], [ANR/crash -Y%] (se disponibili).
-- Miglioramento qualità UX/accessibilità con riduzione ticket utente del [X%] (se disponibile).
+- Miglioramento performance lato app [DA CONFERMARE: startup time e ANR/crash].
+- Miglioramento qualità UX/accessibilità [DA CONFERMARE: riduzione ticket utente o altra evidenza].
 - Prodotto digitale centrale per la mobilità urbana a Milano.
 
 Tecnologie:
