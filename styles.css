@@ -1,5 +1,5 @@
 :root {
-  --print-scale: 1;
+  --print-scale: 0.96;
   --bg: #e9f2ff;
   --bg-2: #deecff;
   --surface: rgba(255, 255, 255, 0.88);
