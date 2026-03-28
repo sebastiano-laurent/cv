@@ -5,12 +5,13 @@ const cvData = {
     location: "Milano, Italia",
     title: "Senior Mobile Developer (iOS/Android/Flutter) | Mobile Team Leader | Backend Integration (C#/SQL/REST)",
     summary:
-      "Senior mobile developer con oltre 9 anni di esperienza (dal 2017) nello sviluppo mobile native e cross-platform. Progressione da Software Developer a Team Leader in Engitel S.p.A., con focus su Flutter, integrazione REST API (C#/SQL), delivery end-to-end e funzionalita come geolocalizzazione, notifiche push e integrazione pagamenti.",
+      "Senior mobile developer con oltre 9 anni di esperienza (dal 2017) nello sviluppo mobile native e cross-platform. Progressione da Software Developer a Team Leader in Engitel S.p.A., con focus su Flutter, integrazione REST API (C#/SQL), delivery end-to-end, rilascio su Google Play/App Store e contributi UI/UX.",
     strengthsLabel: "Punti di forza",
     strengths: [
       "Leadership tecnica e delivery end-to-end: pianificazione, esecuzione, quality gate e rilascio.",
       "Flutter engineering e integrazione backend/API in contesti enterprise multi-stakeholder.",
       "Implementazione funzionalita mobile: geolocalizzazione, notifiche push real-time, integrazione pagamenti.",
+      "Esperienza nel rilascio di applicazioni su Google Play e App Store.",
       "Esperienza su prodotti digitali in ambito smart mobility, turismo digitale e integrazione con sistemi IoT/domotica.",
       "Accelerazione dei flussi di sviluppo con approccio pragmatico orientato a impatto e time-to-market."
     ],
@@ -36,7 +37,7 @@ const cvData = {
       },
       {
         value: "Focus continuo",
-        text: "Qualita del rilascio, stabilita applicativa e KPI tecnici [DA CONFERMARE]."
+        text: "Qualita del rilascio, stabilita applicativa e KPI tecnici monitorati costantemente."
       }
     ],
     experienceLabel: "Esperienza professionale",
@@ -87,6 +88,8 @@ const cvData = {
       "Xamarin",
       "iOS",
       "Android",
+      "Google Play & App Store Release",
+      "UI/UX Collaboration",
       "Sviluppo mobile end-to-end",
       "Geolocalizzazione",
       "Push notifications"
@@ -128,8 +131,8 @@ const cvData = {
     education: "Diploma di Perito Informatico\nI.I.S \"Curie – Sraffa\" – Milano\n(2012-2017)",
     languagesLabel: "Lingue",
     languages: [
-      "Italiano: Madrelingua",
-      "Inglese: Buon livello nel parlato, comprensione completa"
+      "Italiano: C2 (Madrelingua)",
+      "Inglese: B2 (Utente indipendente)"
     ],
     footerThemeLabel: "Aspetto",
     footerThemeLight: "Chiaro",
@@ -148,12 +151,13 @@ const cvData = {
     location: "Milan, Italy",
     title: "Senior Mobile Developer (iOS/Android/Flutter) | Mobile Team Leader | Backend Integration (C#/SQL/REST)",
     summary:
-      "Senior mobile developer with 9+ years of experience (since 2017) across native and cross-platform development. Progressed from Software Developer to Team Leader at Engitel S.p.A., with focus on Flutter engineering, REST API integration (C#/SQL), end-to-end delivery, and features such as geolocation, push notifications, and payment integrations.",
+      "Senior mobile developer with 9+ years of experience (since 2017) across native and cross-platform development. Progressed from Software Developer to Team Leader at Engitel S.p.A., with focus on Flutter engineering, REST API integration (C#/SQL), end-to-end delivery, Google Play/App Store releases, and UI/UX collaboration.",
     strengthsLabel: "Core strengths",
     strengths: [
       "Technical leadership and end-to-end delivery: planning, execution, quality gates, and release support.",
       "Flutter engineering and backend/API integration in enterprise, multi-stakeholder environments.",
       "Mobile feature delivery: geolocation, real-time push notifications, and payment integrations.",
+      "Hands-on app publishing and release coordination for Google Play and App Store.",
       "Experience across smart mobility products, digital tourism, and IoT/home automation integrations.",
       "Faster development flows through a pragmatic, impact-driven approach focused on time-to-market."
     ],
@@ -179,7 +183,7 @@ const cvData = {
       },
       {
         value: "Continuous focus",
-        text: "Release quality, app stability, and technical KPIs [TO BE CONFIRMED]."
+        text: "Release quality, app stability, and continuously monitored technical KPIs."
       }
     ],
     experienceLabel: "Professional experience",
@@ -230,6 +234,8 @@ const cvData = {
       "Xamarin",
       "iOS",
       "Android",
+      "Google Play & App Store Release",
+      "UI/UX Collaboration",
       "End-to-End Mobile Delivery",
       "Geolocation",
       "Push notifications"
@@ -271,8 +277,8 @@ const cvData = {
     education: "IT Technical Diploma - IS Curie Sraffa, Milan (2012-2017)",
     languagesLabel: "Languages",
     languages: [
-      "Italian: Native",
-      "English: Good spoken level, full comprehension"
+      "Italian: C2 (Native)",
+      "English: B2 (Independent User)"
     ],
     footerThemeLabel: "Appearance",
     footerThemeLight: "Light",
