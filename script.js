@@ -351,6 +351,16 @@ const printMarginMm = 20;
 const printSafetyMm = 18;
 const mmToPx = 96 / 25.4;
 const memoryStore = {};
+const userAgent = navigator.userAgent || "";
+const isWindowsChrome =
+  /Windows/i.test(userAgent) &&
+  /Chrome\//i.test(userAgent) &&
+  !/Edg\//i.test(userAgent) &&
+  !/OPR\//i.test(userAgent);
+
+if (isWindowsChrome) {
+  document.documentElement.classList.add("performance-mode");
+}
 
 function storageGet(key, fallbackValue) {
   try {
@@ -906,7 +916,7 @@ function updateTopbarState() {
   const isScrolled = window.scrollY > topbarScrollThreshold;
   document.body.classList.toggle("scrolled", isScrolled);
 
-  const disableParallax = reducedMotionQuery.matches || window.innerWidth <= 700;
+  const disableParallax = reducedMotionQuery.matches || isWindowsChrome || window.innerWidth <= 700;
   const nextParallaxShift = disableParallax ? 0 : Math.min(36, window.scrollY * 0.08);
   if (Math.abs(nextParallaxShift - lastParallaxShift) >= 0.2) {
     lastParallaxShift = nextParallaxShift;
