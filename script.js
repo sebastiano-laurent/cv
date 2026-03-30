@@ -967,8 +967,8 @@ function renderCv(lang) {
   elements.footerThemeDark.textContent = data.footerThemeDark;
   elements.footerThemeAuto.textContent = data.footerThemeAuto;
   elements.footerCopy.textContent = data.footerCopy;
-  elements.footerContact.textContent = data.footerContact;
-  elements.footerLinkedin.textContent = data.footerLinkedin;
+  if (elements.footerContact) elements.footerContact.textContent = data.footerContact;
+  if (elements.footerLinkedin) elements.footerLinkedin.textContent = data.footerLinkedin;
   elements.footerLanguageLabel.textContent = data.footerLanguageLabel;
   elements.footerLangIt.textContent = data.footerLangIt;
   elements.footerLangEn.textContent = data.footerLangEn;
