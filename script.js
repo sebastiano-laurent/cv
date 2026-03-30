@@ -141,7 +141,20 @@ const cvData = {
     footerLinkedin: "LinkedIn",
     footerLanguageLabel: "Lingua",
     footerLangIt: "Italiano",
-    footerLangEn: "Inglese"
+    footerLangEn: "Inglese",
+    skipToContent: "Salta al contenuto principale",
+    a11yToggleLabel: "Accessibilita WCAG 2.2",
+    a11yPanelTitle: "Accessibilita",
+    a11yTextSizeLabel: "Testo grande",
+    a11yTextZoomLabel: "Zoom testo",
+    a11yContrastLabel: "Contrasto elevato",
+    a11yMotionLabel: "Riduci movimento",
+    a11yReadingLabel: "Modalita lettura",
+    a11yLinksLabel: "Sottolinea link",
+    a11yResetLabel: "Ripristina preferenze",
+    a11yStateOn: "Attivo",
+    a11yStateOff: "Disattivo",
+    a11yResetDone: "Preferenze accessibilita ripristinate"
   },
   en: {
     htmlLang: "en",
@@ -285,7 +298,20 @@ const cvData = {
     footerLinkedin: "LinkedIn",
     footerLanguageLabel: "Language",
     footerLangIt: "Italian",
-    footerLangEn: "English"
+    footerLangEn: "English",
+    skipToContent: "Skip to main content",
+    a11yToggleLabel: "WCAG 2.2 accessibility",
+    a11yPanelTitle: "Accessibility",
+    a11yTextSizeLabel: "Larger text",
+    a11yTextZoomLabel: "Text zoom",
+    a11yContrastLabel: "High contrast",
+    a11yMotionLabel: "Reduce motion",
+    a11yReadingLabel: "Reading mode",
+    a11yLinksLabel: "Underline links",
+    a11yResetLabel: "Reset preferences",
+    a11yStateOn: "On",
+    a11yStateOff: "Off",
+    a11yResetDone: "Accessibility preferences reset"
   }
 };
 
@@ -324,7 +350,20 @@ const elements = {
   footerLinkedin: document.getElementById("footer-link-linkedin"),
   footerLanguageLabel: document.getElementById("footer-label-language"),
   footerLangIt: document.getElementById("btn-lang-it"),
-  footerLangEn: document.getElementById("btn-lang-en")
+  footerLangEn: document.getElementById("btn-lang-en"),
+  skipToContent: document.getElementById("skip-to-content"),
+  a11yToggle: document.getElementById("a11y-toggle"),
+  a11yPanel: document.getElementById("a11y-panel"),
+  a11yTitle: document.getElementById("a11y-title"),
+  a11yTextZoomLabel: document.getElementById("a11y-text-zoom-label"),
+  a11yTextZoomValue: document.getElementById("a11y-text-zoom-value"),
+  a11yTextZoom: document.getElementById("a11y-text-zoom"),
+  a11yContrast: document.getElementById("a11y-contrast"),
+  a11yMotion: document.getElementById("a11y-motion"),
+  a11yReading: document.getElementById("a11y-reading"),
+  a11yLinks: document.getElementById("a11y-links"),
+  a11yReset: document.getElementById("a11y-reset"),
+  a11yStatus: document.getElementById("a11y-status")
 };
 
 const langButtons = Array.from(document.querySelectorAll(".footer-btn[data-lang]"));
@@ -346,6 +385,7 @@ let aiTypingTimerIds = [];
 let topbarScrollThreshold = 120;
 let scrollTicking = false;
 let lastParallaxShift = -1;
+let currentLang = "it";
 const a4HeightMm = 297;
 const printMarginMm = 20;
 const printSafetyMm = 18;
@@ -379,6 +419,87 @@ function storageSet(key, value) {
     window.localStorage.setItem(key, value);
   } catch {
     memoryStore[key] = value;
+  }
+}
+
+function isMotionReduced() {
+  return reducedMotionQuery.matches || document.documentElement.classList.contains("reduce-motion-force");
+}
+
+function setA11yOption(optionKey, isEnabled) {
+  const normalized = Boolean(isEnabled);
+  document.documentElement.classList.toggle(optionKey, normalized);
+  storageSet(`cv_${optionKey}`, normalized ? "1" : "0");
+}
+
+function clampTextZoom(value) {
+  return Math.max(75, Math.min(150, value));
+}
+
+function applyTextZoom(percent) {
+  const normalized = clampTextZoom(percent);
+  document.documentElement.style.setProperty("--a11y-text-zoom", `${(normalized / 100).toFixed(2)}`);
+  elements.a11yTextZoom.value = String(normalized);
+  elements.a11yTextZoomValue.textContent = `${normalized}%`;
+  storageSet("cv_text_zoom", String(normalized));
+  return normalized;
+}
+
+function updateA11yActionLabel(button, label, isEnabled) {
+  const text = document.createElement("span");
+  text.className = "a11y-action-label";
+  text.textContent = label;
+
+  const track = document.createElement("span");
+  track.className = "a11y-switch";
+  track.setAttribute("aria-hidden", "true");
+
+  const thumb = document.createElement("span");
+  thumb.className = "a11y-switch-thumb";
+  track.appendChild(thumb);
+
+  button.replaceChildren(text, track);
+  button.setAttribute("aria-pressed", String(isEnabled));
+}
+
+function updateA11yUiText(lang) {
+  const data = cvData[lang];
+  if (!data) {
+    return;
+  }
+
+  const isContrastEnabled = document.documentElement.classList.contains("high-contrast");
+  const isMotionEnabled = document.documentElement.classList.contains("reduce-motion-force");
+  const isReadingEnabled = document.documentElement.classList.contains("reading-mode");
+  const isLinksEnabled = document.documentElement.classList.contains("underline-links");
+
+  elements.skipToContent.textContent = data.skipToContent;
+  elements.a11yToggle.setAttribute("aria-label", data.a11yToggleLabel);
+  elements.a11yToggle.setAttribute("title", data.a11yToggleLabel);
+  elements.a11yTitle.textContent = data.a11yPanelTitle;
+  elements.a11yTextZoomLabel.textContent = data.a11yTextZoomLabel;
+  elements.a11yTextZoom.setAttribute("aria-label", data.a11yTextZoomLabel);
+  updateA11yActionLabel(elements.a11yContrast, data.a11yContrastLabel, isContrastEnabled);
+  updateA11yActionLabel(elements.a11yMotion, data.a11yMotionLabel, isMotionEnabled);
+  updateA11yActionLabel(elements.a11yReading, data.a11yReadingLabel, isReadingEnabled);
+  updateA11yActionLabel(elements.a11yLinks, data.a11yLinksLabel, isLinksEnabled);
+  elements.a11yReset.textContent = data.a11yResetLabel;
+}
+
+function announceA11yStatus(label, isEnabled) {
+  const data = cvData[currentLang] || cvData.it;
+  const stateText = isEnabled ? data.a11yStateOn : data.a11yStateOff;
+  elements.a11yStatus.textContent = `${label}: ${stateText}`;
+}
+
+function setA11yPanelOpen(isOpen) {
+  const open = Boolean(isOpen);
+  elements.a11yPanel.hidden = !open;
+  elements.a11yToggle.setAttribute("aria-expanded", String(open));
+  if (open) {
+    window.setTimeout(() => {
+      elements.a11yTextZoom.focus();
+    }, 0);
   }
 }
 
@@ -562,7 +683,7 @@ function runAiTyping() {
     return;
   }
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduceMotion = isMotionReduced();
   clearAiTypingTimers();
 
   typingSpans.forEach((span) => {
@@ -669,7 +790,7 @@ function renderImpact(items) {
         <article class="impact-item">
           ${
             Number.isFinite(item.countTo)
-              ? `<span class="impact-value impact-counter" data-count-to="${item.countTo}" data-suffix="${item.suffix || ""}">0${item.suffix || ""}</span>`
+              ? `<span class="impact-value impact-counter" data-count-to="${item.countTo}" data-suffix="${item.suffix || ""}">${item.value}</span>`
               : `<span class="impact-value">${item.value}</span>`
           }
           <p>${item.text}</p>
@@ -703,15 +824,16 @@ function initImpactCounters() {
     return;
   }
 
-  counters.forEach((counter) => {
-    counter.textContent = `0${counter.dataset.suffix || ""}`;
-  });
-
   const run = () => {
+    if (isMotionReduced()) {
+      return;
+    }
+
     counters.forEach((counter) => {
       const target = Number(counter.dataset.countTo || "0");
       const suffix = counter.dataset.suffix || "";
       if (target > 0) {
+        counter.textContent = `0${suffix}`;
         animateCounter(counter, target, suffix);
       }
     });
@@ -743,7 +865,7 @@ function initRevealAnimations() {
     element.style.setProperty("--reveal-delay", `${Math.min(index * 45, 260)}ms`);
   });
 
-  if (reducedMotionQuery.matches) {
+  if (isMotionReduced()) {
     if (revealObserver) {
       revealObserver.disconnect();
     }
@@ -799,6 +921,7 @@ function applyThemeMode(mode) {
 
 function renderCv(lang) {
   const data = cvData[lang];
+  currentLang = lang;
 
   document.documentElement.lang = data.htmlLang;
   elements.cvLocation.textContent = data.location;
@@ -849,6 +972,7 @@ function renderCv(lang) {
   elements.footerLanguageLabel.textContent = data.footerLanguageLabel;
   elements.footerLangIt.textContent = data.footerLangIt;
   elements.footerLangEn.textContent = data.footerLangEn;
+  updateA11yUiText(lang);
 
   if (lang === "it") {
     titleTag.textContent = "Sebastiano Laurent | Senior Mobile Developer (iOS/Android/Flutter)";
@@ -900,6 +1024,98 @@ themeButtons.forEach((button) => {
   });
 });
 
+elements.a11yToggle.addEventListener("click", () => {
+  const isExpanded = elements.a11yToggle.getAttribute("aria-expanded") === "true";
+  setA11yPanelOpen(!isExpanded);
+});
+
+elements.a11yPanel.addEventListener("click", (event) => {
+  event.stopPropagation();
+});
+
+elements.a11yToggle.addEventListener("click", (event) => {
+  event.stopPropagation();
+});
+
+elements.a11yTextZoom.addEventListener("input", () => {
+  const zoom = applyTextZoom(Number(elements.a11yTextZoom.value || "100"));
+  const data = cvData[currentLang] || cvData.it;
+  elements.a11yStatus.textContent = `${data.a11yTextZoomLabel}: ${zoom}%`;
+});
+
+elements.a11yContrast.addEventListener("click", () => {
+  const nextEnabled = !document.documentElement.classList.contains("high-contrast");
+  setA11yOption("high-contrast", nextEnabled);
+  updateA11yUiText(currentLang);
+  const data = cvData[currentLang] || cvData.it;
+  announceA11yStatus(data.a11yContrastLabel, nextEnabled);
+});
+
+elements.a11yMotion.addEventListener("click", () => {
+  const nextEnabled = !document.documentElement.classList.contains("reduce-motion-force");
+  setA11yOption("reduce-motion-force", nextEnabled);
+  clearAiTypingTimers();
+  initAiTyping();
+  initRevealAnimations();
+  queueTopbarUpdate();
+  updateA11yUiText(currentLang);
+  const data = cvData[currentLang] || cvData.it;
+  announceA11yStatus(data.a11yMotionLabel, nextEnabled);
+});
+
+elements.a11yReading.addEventListener("click", () => {
+  const nextEnabled = !document.documentElement.classList.contains("reading-mode");
+  setA11yOption("reading-mode", nextEnabled);
+  updateA11yUiText(currentLang);
+  const data = cvData[currentLang] || cvData.it;
+  announceA11yStatus(data.a11yReadingLabel, nextEnabled);
+});
+
+elements.a11yLinks.addEventListener("click", () => {
+  const nextEnabled = !document.documentElement.classList.contains("underline-links");
+  setA11yOption("underline-links", nextEnabled);
+  updateA11yUiText(currentLang);
+  const data = cvData[currentLang] || cvData.it;
+  announceA11yStatus(data.a11yLinksLabel, nextEnabled);
+});
+
+elements.a11yReset.addEventListener("click", () => {
+  applyTextZoom(100);
+  setA11yOption("text-size-lg", false);
+  setA11yOption("high-contrast", false);
+  setA11yOption("reduce-motion-force", false);
+  setA11yOption("reading-mode", false);
+  setA11yOption("underline-links", false);
+  clearAiTypingTimers();
+  initAiTyping();
+  initRevealAnimations();
+  queueTopbarUpdate();
+  updateA11yUiText(currentLang);
+  const data = cvData[currentLang] || cvData.it;
+  elements.a11yStatus.textContent = data.a11yResetDone;
+});
+
+document.addEventListener("click", (event) => {
+  const target = event.target;
+  if (!(target instanceof Element)) {
+    return;
+  }
+  if (target.closest(".a11y-dock")) {
+    return;
+  }
+  setA11yPanelOpen(false);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setA11yPanelOpen(false);
+  }
+  if (event.altKey && event.shiftKey && event.key.toLowerCase() === "a") {
+    const isExpanded = elements.a11yToggle.getAttribute("aria-expanded") === "true";
+    setA11yPanelOpen(!isExpanded);
+  }
+});
+
 const onSystemThemeChange = () => {
   if (currentThemeMode === "auto") {
     applyThemeMode("auto");
@@ -916,7 +1132,7 @@ function updateTopbarState() {
   const isScrolled = window.scrollY > topbarScrollThreshold;
   document.body.classList.toggle("scrolled", isScrolled);
 
-  const disableParallax = reducedMotionQuery.matches || isWindowsChrome || window.innerWidth <= 700;
+  const disableParallax = isMotionReduced() || isWindowsChrome || window.innerWidth <= 700;
   const nextParallaxShift = disableParallax ? 0 : Math.min(36, window.scrollY * 0.08);
   if (Math.abs(nextParallaxShift - lastParallaxShift) >= 0.2) {
     lastParallaxShift = nextParallaxShift;
@@ -970,9 +1186,23 @@ window.addEventListener("resize", () => {
 
 const savedLang = storageGet("cv_lang", "it");
 const savedThemeMode = storageGet("cv_theme_mode", "auto");
+const savedTextSize = storageGet("cv_text-size-lg", "0") === "1";
+const savedTextZoomRaw = Number(storageGet("cv_text_zoom", savedTextSize ? "113" : "100"));
+const savedTextZoom = Number.isFinite(savedTextZoomRaw) ? clampTextZoom(savedTextZoomRaw) : 100;
+const savedHighContrast = storageGet("cv_high-contrast", "0") === "1";
+const savedReducedMotion = storageGet("cv_reduce-motion-force", "0") === "1";
+const savedReadingMode = storageGet("cv_reading-mode", "0") === "1";
+const savedUnderlineLinks = storageGet("cv_underline-links", "0") === "1";
 applyRandomColorProfile();
 applyDarkGradientProfile();
 applyThemeMode(savedThemeMode);
+applyTextZoom(savedTextZoom);
+setA11yOption("text-size-lg", false);
+setA11yOption("high-contrast", savedHighContrast);
+setA11yOption("reduce-motion-force", savedReducedMotion);
+setA11yOption("reading-mode", savedReadingMode);
+setA11yOption("underline-links", savedUnderlineLinks);
+setA11yPanelOpen(false);
 renderCv(savedLang === "en" ? "en" : "it");
 recalculateTopbarThreshold();
 updateTopbarState();

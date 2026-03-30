@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <a class="skip-link" id="skip-to-content" href="#cv-root">Salta al contenuto principale</a>
     <div class="noise-layer" aria-hidden="true"></div>
 
     <header class="topbar">
@@ -39,6 +40,7 @@
     </header>
 
     <main class="wrapper cv" id="cv-root">
+      <article class="reader-article" aria-labelledby="cv-name">
       <section class="hero card reveal">
         <div class="hero-grid">
           <button id="profile-flip" class="profile-flip" type="button" aria-label="Mostra foto o avatar">
@@ -68,13 +70,13 @@
 
           <div class="hero-body">
             <h1 id="cv-name">Sebastiano Laurent</h1>
-            <p class="title" id="cv-title"></p>
-            <p class="summary" id="cv-summary"></p>
+            <p class="title" id="cv-title">Senior Mobile Developer (iOS/Android/Flutter) | Mobile Team Leader | Backend Integration (C#/SQL/REST)</p>
+            <p class="summary" id="cv-summary">Senior mobile developer con oltre 9 anni di esperienza (dal 2017) nello sviluppo mobile native e cross-platform. Progressione da Software Developer a Team Leader in <a class="stealth-link" href="https://www.engitel.com" target="_blank" rel="noreferrer">Engitel S.p.A.</a>, con focus su Flutter, integrazione REST API (C#/SQL), delivery end-to-end, rilascio su Google Play/App Store e contributi UI/UX.</p>
             <div class="contacts">
-              <span class="location contact-chip chip-location" id="cv-location"></span>
+              <span class="location contact-chip chip-location" id="cv-location">Milano, Italia</span>
               <a class="contact-chip chip-phone" href="tel:+393381001070">+39 338 1001070</a>
               <a class="contact-chip chip-email" href="mailto:sebastiano.laurent@outlook.com">sebastiano.laurent@outlook.com</a>
-              <a class="contact-chip chip-linkedin" href="https://linkedin.com/in/sebastianolaurent" target="_blank" rel="noreferrer">linkedin.com/in/sebastianolaurent</a>
+              <a class="contact-chip chip-linkedin" href="https://linkedin.com/in/sebastianolaurent" target="_blank" rel="noreferrer">sebastianolaurent</a>
             </div>
           </div>
         </div>
@@ -82,60 +84,159 @@
 
       <div class="top-boxes">
         <section class="card reveal">
-          <h2 id="label-strengths"></h2>
-          <ul class="strengths" id="cv-strengths"></ul>
+          <h2 id="label-strengths">Punti di forza</h2>
+          <ul class="strengths" id="cv-strengths">
+            <li>Leadership tecnica e delivery end-to-end: pianificazione, esecuzione, quality gate e rilascio.</li>
+            <li>Flutter engineering e integrazione backend/API in contesti enterprise multi-stakeholder.</li>
+            <li>Implementazione funzionalita mobile: geolocalizzazione, notifiche push real-time, integrazione pagamenti.</li>
+            <li>Esperienza nel rilascio di applicazioni su Google Play e App Store.</li>
+            <li>Esperienza su prodotti digitali in ambito smart mobility, turismo digitale e integrazione con sistemi IoT/domotica.</li>
+            <li>Accelerazione dei flussi di sviluppo con approccio pragmatico orientato a impatto e time-to-market.</li>
+          </ul>
         </section>
 
         <section class="card reveal ai-box" id="ai-card">
-          <h2 id="label-skills-ai"></h2>
-          <ul class="strengths ai-list" id="cv-skills-ai"></ul>
+          <h2 id="label-skills-ai">AI e automazione</h2>
+          <ul class="strengths ai-list" id="cv-skills-ai">
+            <li>Adozione operativa di strumenti AI per accelerare analisi tecnica, prototipazione, refactoring e automazione task ripetitivi</li>
+            <li>Uso quotidiano dell'AI con approccio engineering-first: revisione critica degli output e validazione tecnica</li>
+            <li>Integrazione controllata dell'AI nel ciclo di sviluppo per migliorare qualita del codice e time-to-delivery</li>
+            <li>Strumenti principali: OpenAI, Anthropic, Gemini</li>
+          </ul>
         </section>
       </div>
 
       <section class="layout">
         <div class="main-col">
           <section class="card reveal">
-            <h2 id="label-experience"></h2>
-            <div id="cv-experience"></div>
+            <h2 id="label-experience">Esperienza professionale</h2>
+            <div id="cv-experience">
+              <article>
+                <h3><a class="stealth-link" href="https://www.engitel.com" target="_blank" rel="noreferrer">Engitel S.p.A.</a> | Team Leader</h3>
+                <small>2021-Oggi</small>
+                <p>Ownership tecnica e organizzativa su delivery mobile multi-stakeholder.</p>
+                <ul>
+                  <li>Guida tecnica dello sviluppo cross-platform con Flutter.</li>
+                  <li>Coordinamento di un team di 5 sviluppatori su priorita e pianificazione.</li>
+                  <li>Integrazione backend tramite REST API (C#, SQL).</li>
+                  <li>Mentoring tecnico del team e supporto a code review, testing e quality gate pre-rilascio.</li>
+                </ul>
+              </article>
+              <article>
+                <h3><a class="stealth-link" href="https://www.engitel.com" target="_blank" rel="noreferrer">Engitel S.p.A.</a> | Software Developer</h3>
+                <small>2017-2021</small>
+                <p>Contributo al ciclo completo di sviluppo mobile in contesti enterprise.</p>
+                <ul>
+                  <li>Sviluppo app cross-platform con Xamarin.</li>
+                  <li>Code review, testing e supporto ai rilasci.</li>
+                  <li>Analisi funzionale con clienti e stakeholder.</li>
+                  <li>Base tecnica per la progressione verso ruoli di leadership.</li>
+                </ul>
+              </article>
+            </div>
           </section>
           <section class="card reveal project-box">
-            <h2 id="label-project"></h2>
-            <div id="cv-project"></div>
+            <h2 id="label-project">Progetto di rilievo</h2>
+            <div id="cv-project">
+              <article>
+                <h3>App ufficiale ATM Milano | Full Stack Developer</h3>
+                <small>2018-2024</small>
+                <p>Prodotto digitale ad ampia adozione e canale centrale per la mobilita urbana.</p>
+                <ul>
+                  <li>Rifacimento grafico e funzionale dell'app con Flutter, dalla UI alla logica backend.</li>
+                  <li>Integrazione sistemi esterni: titoli viaggio, pagamenti, mappe, route planning.</li>
+                  <li>Focus specifico su accessibilita e usabilita.</li>
+                  <li>Implementazione componenti orientati a scalabilita e sicurezza.</li>
+                  <li>Ottimizzazione performance su dispositivi mid-range.</li>
+                </ul>
+                <a class="project-reference-link" href="https://www.linkedin.com/posts/sebastianolaurent_dal-gennaio-2018-ho-intrapreso-un-viaggio-activity-7274169972212326400-lyAg" target="_blank" rel="noreferrer noopener">Approfondimento (LinkedIn)</a>
+              </article>
+            </div>
           </section>
         </div>
 
         <aside class="rail">
           <section class="card reveal">
-            <h2 id="label-skills-mobile"></h2>
-            <ul id="cv-skills-mobile"></ul>
+            <h2 id="label-skills-mobile">Competenze - mobile</h2>
+            <ul id="cv-skills-mobile" class="mobile-chip-list">
+              <li class="mobile-chip">Flutter</li>
+              <li class="mobile-chip">Dart</li>
+              <li class="mobile-chip">Xamarin</li>
+              <li class="mobile-chip">iOS</li>
+              <li class="mobile-chip">Android</li>
+              <li class="mobile-chip">Google Play &amp; App Store Release</li>
+              <li class="mobile-chip">UI/UX Collaboration</li>
+              <li class="mobile-chip">Sviluppo mobile end-to-end</li>
+            </ul>
           </section>
           <section class="card reveal">
-            <h2 id="label-skills-backend"></h2>
-            <ul id="cv-skills-backend"></ul>
+            <h2 id="label-skills-backend">Competenze - backend e API</h2>
+            <ul id="cv-skills-backend">
+              <li>Integrazione REST API</li>
+              <li>C#</li>
+              <li>SQL</li>
+              <li>Integrazione sistemi esterni</li>
+              <li>Delivery full stack in contesti mobile-centric</li>
+            </ul>
           </section>
           <section class="card reveal">
-            <h2 id="label-skills-devops"></h2>
-            <ul id="cv-skills-devops"></ul>
+            <h2 id="label-skills-devops">Competenze - strumenti e DevOps</h2>
+            <ul id="cv-skills-devops">
+              <li>Git</li>
+              <li>Azure DevOps (infrastruttura CI/CD, esperienza pregressa)</li>
+              <li>Google Cloud Console (rilascio API, esperienza in corso)</li>
+              <li>Code Review</li>
+              <li>Testing</li>
+              <li>Supporto al rilascio</li>
+            </ul>
           </section>
           <section class="card reveal">
-            <h2 id="label-skills-leadership"></h2>
-            <ul id="cv-skills-leadership"></ul>
+            <h2 id="label-skills-leadership">Competenze - leadership e delivery</h2>
+            <ul id="cv-skills-leadership">
+              <li>Leadership del team</li>
+              <li>Delivery Management</li>
+              <li>Stakeholder Management</li>
+              <li>Mentoring tecnico</li>
+              <li>Problem solving orientato alle persone</li>
+              <li>Planning</li>
+            </ul>
           </section>
           <section class="card reveal">
-            <h2 id="label-education"></h2>
-            <p id="cv-education"></p>
+            <h2 id="label-education">Formazione</h2>
+            <p id="cv-education">Diploma di Perito Informatico<br />I.I.S "Curie - Sraffa" - Milano<br />(2012-2017)</p>
           </section>
           <section class="card reveal">
-            <h2 id="label-languages"></h2>
-            <ul id="cv-languages"></ul>
+            <h2 id="label-languages">Lingue</h2>
+            <ul id="cv-languages">
+              <li>Italiano: C2 (Madrelingua)</li>
+              <li>Inglese: B2 (Utente indipendente)</li>
+            </ul>
           </section>
         </aside>
       </section>
 
       <section class="card reveal impact-card">
-        <h2 id="label-impact"></h2>
-        <div class="impact-grid" id="cv-impact"></div>
+        <h2 id="label-impact">Risultati e impatto</h2>
+        <div class="impact-grid" id="cv-impact">
+          <article class="impact-item">
+            <span class="impact-value">2M+ utenti</span>
+            <p>Contributo al progetto ATM Milano con oltre 2 milioni di utenti attivi.</p>
+          </article>
+          <article class="impact-item">
+            <span class="impact-value">5 developer</span>
+            <p>Coordinamento tecnico-operativo di team mobile su pianificazione e scadenze.</p>
+          </article>
+          <article class="impact-item">
+            <span class="impact-value">9+ anni</span>
+            <p>Crescita professionale da Software Developer a Team Leader.</p>
+          </article>
+          <article class="impact-item">
+            <span class="impact-value">Focus continuo</span>
+            <p>Qualita del rilascio, stabilita applicativa e KPI tecnici monitorati costantemente.</p>
+          </article>
+        </div>
       </section>
+      </article>
     </main>
 
     <footer class="footer-bar">
@@ -166,6 +267,49 @@
         </div>
       </div>
     </footer>
+
+    <div class="a11y-dock">
+      <button
+        id="a11y-toggle"
+        type="button"
+        class="a11y-toggle"
+        aria-expanded="false"
+        aria-controls="a11y-panel"
+        aria-label="Accessibilita"
+      >
+        <span class="a11y-toggle-icon" aria-hidden="true">
+          <svg viewBox="0 0 122.88 122.88" focusable="false" aria-hidden="true">
+            <path d="M61.44,0A61.46,61.46,0,1,1,18,18,61.21,61.21,0,0,1,61.44,0Zm-.39,74.18L52.1,98.91a4.94,4.94,0,0,1-2.58,2.83A5,5,0,0,1,42.7,95.5l6.24-17.28a26.3,26.3,0,0,0,1.17-4,40.64,40.64,0,0,0,.54-4.18c.24-2.53.41-5.27.54-7.9s.22-5.18.29-7.29c.09-2.63-.62-2.8-2.73-3.3l-.44-.1-18-3.39A5,5,0,0,1,27.08,46a5,5,0,0,1,5.05-7.74l19.34,3.63c.77.07,1.52.16,2.31.25a57.64,57.64,0,0,0,7.18.53A81.13,81.13,0,0,0,69.9,42c.9-.1,1.75-.21,2.6-.29l18.25-3.42A5,5,0,0,1,94.5,39a5,5,0,0,1,1.3,7,5,5,0,0,1-3.21,2.09L75.15,51.37c-.58.13-1.1.22-1.56.29-1.82.31-2.72.47-2.61,3.06.08,1.89.31,4.15.61,6.51.35,2.77.81,5.71,1.29,8.4.31,1.77.6,3.19,1,4.55s.79,2.75,1.39,4.42l6.11,16.9a5,5,0,0,1-6.82,6.24,4.94,4.94,0,0,1-2.58-2.83L63,74.23,62,72.4l-1,1.78Zm.39-53.52a8.83,8.83,0,1,1-6.24,2.59,8.79,8.79,0,0,1,6.24-2.59Zm36.35,4.43a51.42,51.42,0,1,0,15,36.35,51.27,51.27,0,0,0-15-36.35Z" />
+          </svg>
+        </span>
+      </button>
+      <section id="a11y-panel" class="a11y-panel" aria-labelledby="a11y-title" hidden>
+        <h2 id="a11y-title"></h2>
+        <div class="a11y-actions">
+          <div class="a11y-zoom-control">
+            <div class="a11y-zoom-head">
+              <span id="a11y-text-zoom-label"></span>
+              <span id="a11y-text-zoom-value" aria-live="polite">100%</span>
+            </div>
+            <input
+              id="a11y-text-zoom"
+              class="a11y-zoom-slider"
+              type="range"
+              min="75"
+              max="150"
+              step="5"
+              value="100"
+            />
+          </div>
+          <button id="a11y-contrast" type="button" class="a11y-action" aria-pressed="false"></button>
+          <button id="a11y-motion" type="button" class="a11y-action" aria-pressed="false"></button>
+          <button id="a11y-reading" type="button" class="a11y-action" aria-pressed="false"></button>
+          <button id="a11y-links" type="button" class="a11y-action" aria-pressed="false"></button>
+          <button id="a11y-reset" type="button" class="a11y-action a11y-action-reset"></button>
+        </div>
+      </section>
+      <p id="a11y-status" class="sr-only" aria-live="polite"></p>
+    </div>
 
     <script src="./script.js" defer></script>
   </body>
