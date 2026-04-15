@@ -17,6 +17,17 @@ python3 -m http.server 8080
 ```
 Apri `http://localhost:8080`.
 
+## Build ottimizzata (minificata)
+```bash
+npm install
+npm run build
+```
+Output in `dist/`:
+- `index.html` minificato
+- `styles.css` minificato
+- `script.js` minificato
+- `assets/` copiati (font `woff2`, immagini, favicon)
+
 ## Pubblicazione
 1. Esegui commit e push sul repository.
 2. In GitHub vai su `Settings > Pages`.
