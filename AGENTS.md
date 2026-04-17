@@ -8,11 +8,12 @@
 - Descrizione in inglese, minuscolo, stile imperativo, senza punto finale.
 - Niente scope tra parentesi (es. no `feat(ui): ...`), perché finora non è stato usato.
 - Quando la modifica tocca risorse distribuite/minificate, aggiorna sempre anche la versione minificata in `dist/` prima del commit.
+- Dopo ogni commit esegui sempre `git push`.
 
 ## Comando commit standard
 
 ```bash
-npm run build && git add -A && git commit -m "<type>: <short description>"
+npm run build && git add -A && git commit -m "<type>: <short description>" && git push
 ```
 
 ## Trigger rapido: `git`
@@ -22,7 +23,8 @@ Quando l'utente scrive solo `git`, esegui automaticamente il flusso commit stand
 1. `npm run build`
 2. `git add -A`
 3. `git commit -m "<type>: <short description>"` seguendo le convenzioni sopra
-4. mostra in output hash e subject del commit creato
+4. `git push`
+5. mostra in output hash e subject del commit creato
 
 ## Trigger rapido: `localhost`
 
@@ -34,8 +36,8 @@ Quando l'utente scrive solo `localhost`, avvia automaticamente il server locale 
 Esempi coerenti con i commit esistenti:
 
 ```bash
-npm run build && git add -A && git commit -m "feat: add guest RSVP deadline banner"
-npm run build && git add -A && git commit -m "fix: improve mobile spacing for gallery cards"
-npm run build && git add -A && git commit -m "chore: update runtime configuration defaults"
-npm run build && git add -A && git commit -m "docs: add local development notes"
+npm run build && git add -A && git commit -m "feat: add guest RSVP deadline banner" && git push
+npm run build && git add -A && git commit -m "fix: improve mobile spacing for gallery cards" && git push
+npm run build && git add -A && git commit -m "chore: update runtime configuration defaults" && git push
+npm run build && git add -A && git commit -m "docs: add local development notes" && git push
 ```
