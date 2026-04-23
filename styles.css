@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Sora";
-  src: url("./assets/fonts/Sora-latin-ext.woff2") format("woff2");
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/PlusJakartaSans-latin-ext.woff2") format("woff2");
   font-weight: 400 800;
   font-style: normal;
   font-display: swap;
@@ -8,15 +8,35 @@
 }
 
 @font-face {
-  font-family: "Sora";
-  src: url("./assets/fonts/Sora-latin.woff2") format("woff2");
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/PlusJakartaSans-latin.woff2") format("woff2");
   font-weight: 400 800;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+  font-family: "Fira Code";
+  src: url("./assets/fonts/FiraCode-latin-ext.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: url("./assets/fonts/FiraCode-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
+  --font-main: "Plus Jakarta Sans", sans-serif;
+  --font-ai: "Fira Code", monospace;
   --a11y-text-zoom: 1;
   --bg: #e9f2ff;
   --bg-2: #deecff;
@@ -120,7 +140,7 @@ body {
   margin: 0;
   min-height: 100vh;
   min-height: 100dvh;
-  font-family: Sora, sans-serif;
+  font-family: var(--font-main);
   color: var(--text);
   position: relative;
   overflow-x: hidden;
@@ -271,7 +291,7 @@ body.scrolled .topbar {
 
 .brand {
   margin: 0;
-  font-family: Sora, sans-serif;
+  font-family: var(--font-main);
   font-weight: 800;
   font-size: 1rem;
   letter-spacing: 0.01em;
@@ -443,6 +463,12 @@ body.scrolled .brand {
   box-shadow: none;
 }
 
+.profile-back .avatar-img {
+  object-fit: contain;
+  padding: 0.35rem;
+  filter: drop-shadow(0 8px 18px rgba(9, 20, 46, 0.24));
+}
+
 .profile-front {
   border: 0;
 }
@@ -458,20 +484,16 @@ html.dark-mode body .profile-front {
   transform: rotateY(180deg);
 }
 
-.profile-flip.flip-disabled:hover .profile-flip-inner {
-  transform: none;
-}
-
 h1,
 h2,
 h3 {
-  font-family: Sora, sans-serif;
+  font-family: var(--font-main);
   margin: 0;
 }
 
 h1 {
   margin-top: 0.45rem;
-  font-size: clamp(2.05rem, 4.8vw, 3.35rem);
+  font-size: clamp(1.82rem, 4.3vw, 2.98rem);
   line-height: 1.04;
   letter-spacing: -0.02em;
   font-weight: 800;
@@ -614,7 +636,7 @@ h2 {
   border-radius: 10px;
   padding: 0.52rem 0.62rem;
   background: color-mix(in srgb, var(--surface) 82%, transparent);
-  font-family: "Cascadia Code", "Cascadia Mono", "Segoe UI Mono", Consolas, "Liberation Mono", Menlo, Monaco, monospace;
+  font-family: var(--font-ai);
   font-size: 0.86rem;
   line-height: 1.4;
 }
@@ -1300,7 +1322,7 @@ html.underline-links a {
   }
 
   h1 {
-    font-size: clamp(2.35rem, 3.2vw, 3.75rem);
+    font-size: clamp(2.1rem, 2.9vw, 3.35rem);
   }
 
   .summary {
@@ -1333,7 +1355,7 @@ html.underline-links a {
   }
 
   h1 {
-    font-size: clamp(2.55rem, 2.8vw, 4.1rem);
+    font-size: clamp(2.28rem, 2.5vw, 3.7rem);
   }
 
   .title {
@@ -1534,7 +1556,7 @@ html.underline-links a {
     max-width: 620px;
     margin: 18mm auto 0;
     padding: 0;
-    font-family: Sora, sans-serif;
+    font-family: var(--font-main);
     color: #0f2238;
     text-align: left;
   }
