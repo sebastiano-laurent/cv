@@ -458,6 +458,10 @@ html.dark-mode body .profile-front {
   transform: rotateY(180deg);
 }
 
+.profile-flip.flip-disabled:hover .profile-flip-inner {
+  transform: none;
+}
+
 h1,
 h2,
 h3 {

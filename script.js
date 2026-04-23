@@ -383,6 +383,7 @@ const ogDescription = document.querySelector('meta[property="og:description"]');
 const ogLocale = document.querySelector('meta[property="og:locale"]');
 const themeColorMeta = document.getElementById("meta-theme-color") || document.querySelector('meta[name="theme-color"]');
 const heroSection = document.querySelector(".hero");
+const profileFlip = document.getElementById("profile-flip");
 const systemDarkQuery = typeof window.matchMedia === "function"
   ? window.matchMedia("(prefers-color-scheme: dark)")
   : { matches: false };
@@ -1236,6 +1237,12 @@ if (typeof reducedMotionQuery.addEventListener === "function") {
   reducedMotionQuery.addEventListener("change", onReducedMotionChange);
 } else if (typeof reducedMotionQuery.addListener === "function") {
   reducedMotionQuery.addListener(onReducedMotionChange);
+}
+
+if (profileFlip) {
+  window.setTimeout(() => {
+    profileFlip.classList.add("flip-disabled");
+  }, 5000);
 }
 
 window.addEventListener("beforeprint", () => {
