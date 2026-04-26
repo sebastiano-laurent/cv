@@ -342,7 +342,7 @@ body.scrolled .brand {
 }
 
 @supports (content-visibility: auto) {
-  .layout .card,
+  .layout .card:not(.project-box),
   .impact-card {
     content-visibility: auto;
     contain-intrinsic-size: 1px 420px;
