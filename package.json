@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "bump:asset-version": "node ./scripts/bump-asset-version.mjs",
     "build": "node ./scripts/build.mjs"
   },
   "devDependencies": {
